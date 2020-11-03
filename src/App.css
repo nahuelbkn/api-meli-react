@@ -1,3 +1,34 @@
-.App {
-  margin-left: 2em;
+body {
+  color: rgb(228, 228, 228);
+  height: 100vh;
+  background: #0f0c29;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #24243e, #4d497e, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+.App {
+  margin-top: 15px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+h1 {
+  font-weight: 500;
+}
+
+h2 {
+  margin-top: 10%;
+  color: rgb(104, 183, 185);
+}
+
+div.App h3 { 
+  color: rgb(184, 184, 184);
+  font-weight: 400;
+  font-size: 16px;
+}
+
+form.search {
+  margin-top: 30px;
+}
+
+
