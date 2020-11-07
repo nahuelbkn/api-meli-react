@@ -1,8 +1,7 @@
 import React from "react";
 
 
-
-export default class ResultItem extends React.Component
+export default class FavItem extends React.Component
 {
     clickFav = (event)=>{
         this.props.setNewFav(event.target.attributes.item_id.value);
@@ -13,31 +12,31 @@ export default class ResultItem extends React.Component
     }
 
     render() {
-        const { item, isFav } = this.props;
+        const { favItem, isFav } = this.props;
         return (
-            item && (
+            favItem && (
                 <div className="card mb-3" style={{maxWidth: '100%'}}>
                     {/* {console.log(item)} */}
                     <div className="row no-gutters">
                         <div className="col-md-4">
-                            <img src={item.thumbnail} className="card-img" alt={item.title} />
+                            <img src={favItem.thumbnail} className="card-img" alt={favItem.title} />
                         </div>
                         <div className="col-md-8">
                             <div className="card-header">
-                                <h5 className="card-title text-dark">{item.title}</h5>
+                                <h5 className="card-title text-dark">{favItem.title}</h5>
                                 {
-                                    isFav ? ( <i onClick={this.clickRemoveFav} item_id={item.id} className="fas fa-heart fav text-danger" /> ) : (
-                                        <i onClick={this.clickFav} item_id={item.id} className="fal fa-heart fav text-dark" />
+                                    isFav ? ( <i onClick={this.clickRemoveFav} item_id={favItem.id} className="fas fa-heart fav text-danger" /> ) : (
+                                        <i onClick={this.clickFav} item_id={favItem.id} className="fal fa-heart fav text-dark" />
                                     )
                                 }
                             </div>
                             <div className="card-body" style={{maxHeight: '100%'}}>
-                                <p className="card-text text-dark">{item.currency_id+" $"+item.price}</p>
+                                <p className="card-text text-dark">{favItem.currency_id+" $"+favItem.price}</p>
                                 <p className="card-text text-dark">
-                                    {`Unidades vendidas: ${item.sold_quantity} / Unidades disponibles: ${item.available_quantity}`}
+                                    {`Unidades vendidas: ${favItem.sold_quantity} / Unidades disponibles: ${favItem.available_quantity}`}
                                 </p>
                                 <div /* className="buttons" */>
-                                    <a href={item.permalink} target="_blank" rel="noopener noreferrer">
+                                    <a href={favItem.permalink} target="_blank" rel="noopener noreferrer">
                                         <button type="button" className="btn btn-warning">Ver en mercadolibre</button>
                                     </a>
                                 </div>
