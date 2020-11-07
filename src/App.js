@@ -36,23 +36,17 @@ export default class App extends React.Component
     !auxArrayIDFavs.includes(newID) && ( auxArrayIDFavs.push(newID) );
     this.setState({arrayIDFavs: auxArrayIDFavs});
     localStorage.setItem("arrayFavsID", JSON.stringify(auxArrayIDFavs));
-    console.log("Se guardó un nuevo FAV")
   }
 
   setNotFav = (removeID)=>{
-    console.log(removeID);
     let auxArrayIDFavs = [...this.state.arrayIDFavs] || [];
-    console.log(auxArrayIDFavs)
     let index = auxArrayIDFavs.indexOf(removeID);
-    console.log(index)
     index > -1 && ( auxArrayIDFavs.splice(index, 1) );
     this.setState({arrayIDFavs: auxArrayIDFavs});
     localStorage.setItem("arrayFavsID", JSON.stringify(auxArrayIDFavs));
-    console.log("Se quitó un FAV")
   }
 
   getFavs = ()=>{
-    {console.log("pide los favs")}
     this.setState({arrayItemFavs: []});
     this.state.arrayIDFavs.forEach((current_id)=>{
       fetch(`https://api.mercadolibre.com/items/${current_id}`)
@@ -61,7 +55,6 @@ export default class App extends React.Component
         let auxFavItemsArray = [...this.state.arrayItemFavs];
         auxFavItemsArray.push(item);
         this.setState({arrayItemFavs: auxFavItemsArray});
-        console.log(this.state.arrayItemFavs);
       }).catch((error)=>{/* TODO catch handler */});
     })
   }
@@ -88,7 +81,6 @@ export default class App extends React.Component
   render() {
     return (
       <div className="App">
-        {console.log("RENDER APP")}
         <Router>
           <h1>Guayerd - MELI</h1>
           <h3>Una nueva manera de encontrar</h3> 

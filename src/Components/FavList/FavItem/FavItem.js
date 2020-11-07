@@ -16,7 +16,6 @@ export default class FavItem extends React.Component
         return (
             favItem && (
                 <div className="card mb-3" style={{maxWidth: '100%'}}>
-                    {/* {console.log(item)} */}
                     <div className="row no-gutters">
                         <div className="col-md-4">
                             <img src={favItem.thumbnail} className="card-img" alt={favItem.title} />

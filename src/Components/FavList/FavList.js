@@ -10,7 +10,6 @@ export default class FavList extends React.Component
     }
     
     componentDidMount()
-    {console.log("DAME LOS FAVS")
         this.props.getFavs();
     }
 
@@ -24,7 +23,6 @@ export default class FavList extends React.Component
                         <button type="button" className="btn btn-secondary ml-3 mb-2">Seguir buscando</button>
                     </Link>
                 </div>
-                {console.log(arrayFavs)}
                 {
                     
                     arrayFavs && arrayFavs.length > 0 && (

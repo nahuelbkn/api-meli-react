@@ -17,7 +17,6 @@ export default class ResultItem extends React.Component
         return (
             item && (
                 <div className="card mb-3" style={{maxWidth: '100%'}}>
-                    {/* {console.log(item)} */}
                     <div className="row no-gutters">
                         <div className="col-md-4">
                             <img src={item.thumbnail} className="card-img" alt={item.title} />
