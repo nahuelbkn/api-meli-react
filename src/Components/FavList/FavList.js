@@ -10,6 +10,7 @@ export default class FavList extends React.Component
     }
     
     componentDidMount()
+    {
         this.props.getFavs();
     }
 

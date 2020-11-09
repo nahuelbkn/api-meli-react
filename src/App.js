@@ -28,7 +28,6 @@ export default class App extends React.Component
     .then((response)=>response.json())
     .then((jsonData)=>{this.setState({objectData: jsonData})})
     .catch((error)=>{/* TODO catch handler */});
-    
   }
 
   setNewFav = (newID)=>{
@@ -74,7 +73,7 @@ export default class App extends React.Component
 
     /* GET favorite items from localStorage. */
     /* TODO backend for replace localStorage as data sourc. */
-    const LS_FAVITEMS = localStorage.getItem("arrayFavItems");
+    const LS_FAVITEMS = localStorage.getItem("arrayFavsID");
     LS_FAVITEMS !== null && LS_FAVITEMS !== undefined && ( this.setState({arrayIDFavs: JSON.parse(LS_FAVITEMS)}) );
   }
 
